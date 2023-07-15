@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<link rel="icon" href="./bus.png">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <ul>
+      <li>
+        <a href="./BUS FRONT_PAGE.html">
+          <img src="./bus.png" class="move-right">
+        </a>
+      </li>
+      <li>
+        <a href="./BUS FRONT_PAGE.html"><p class="move-right">HOME</p></a>
+      </li>
+      <li class="dropdown"><a href="#SETTINGS"><p class="move-right">SETTINGS</p></a>
+<div class="dropdown-content">
+           <script src="./script.js"></script></a>
+          <a href="#">Themes  <form id="background-form">
+    <div id="background-selector">
+      <button type="button" onclick="openTheme()">Change Background Color</button>
+    </div>
+  </form>
+</a>
+        </div>
+</li>
+      <li class="dropdown"><a href="#"><p class="move-right">ABOUT</p></a>
+<div class="dropdown-content">
+          <a href="./About US.html">About US</a>
+          <a href="https://www.google.com/maps/dir//IITH+Road,+Near+NH-65,+Sangareddy,+Kandi,+Telangana+502285/@17.5946904,78.0529996,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcbefdc136bffbb:0x73414ff6594c9191!2m2!1d78.1230401!2d17.5947027?entry=ttu">IITH MAP</a> 
+        </div>
+</li>
+<li class="dropdown"><a href="#"><p class="move-right">CUSTOMER VOTE</p></a>
+<div class="dropdown-content">
+          <a href="./USER%20VOTE.php">Hostel Circle to Main Gate</a>
+          <a href="./USER%20VOTE1.php">MainGate to Hostel Circle</a>
+          <a href="./USER%20VOTE2.php">Hostel Circle to New Hostels</a>
+          <a href="./USER%20VOTE3.php">New Hostels to Hostel Circle</a>
+        </div>
+</li>
+      
+    </ul> 
+  <h2 style="font-size:200%;margin-left:39%;">Customize Background Color</h2>
+  <p style="font-size:200%;margin-left:42%;">Select a color:</p>
+  <input type="color" style="font-size:150%; margin-left:43%;width: 10%;" id="color-picker">
+  <button type="button" style="font-size:150%;color:green;" onclick="changeBackground()">Apply</button>
+
+  <script>
+    function changeBackground() {
+      var colorPicker = document.getElementById('color-picker');
+      var color = colorPicker.value;
+      window.opener.postMessage(color, '*');
+      window.close();
+    }
+  </script>
+</body>
+</html> 

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script>
+			function validateform(){
+				let pattern_email = /(ai|bm|bo|bt|cc|ce|ch|co|cy|cs|ds|ee|ep|es|ic|ma|me|ms|msc|la|ca|ph|ae)([1][8-9]|[2][0-2])(btech|mtech|resch)(110)([0][1-9]|[1-5][0-9]|[6][0-1])(@iith\.ac\.in)/i;
+				let pattern_pwd =/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/;
+				let email = document.querySelector('input[name="email"]').value;
+				let pwd = document.querySelector('input[name="pwd"]').value;
+				let name = document.querySelector('input[name="name"]').value;
+				if( name.trim() ==="" || email.trim() ==="" || pwd.trim() ==="" ){
+					document.getElementById("alerts").innerHTML= '<span style="color: red; font-weight: bold;font-size:150%;margin-left:42%;">Please fill all the required fields</span>'; // add css with red bold text
+					return false;
+				}
+				else if( pattern_email.test(email) != true){
+					document.getElementById("alerts").innerHTML= '<span style="color: red; font-weight: bold;font-size:150%;margin-left:42%;">Please give valid (college) E-mail ID</span>';
+					return false;
+				}
+				else if( pattern_pwd.test(pwd) != true){
+					document.getElementById("alerts").innerHTML= '<span style="color: red; font-weight: bold;font-size:150%;margin-left:10%;">Please enter a srong password with atleast one small letter,one capital letter and one digit. Ex:aB3 or Ba3fr or 3a3B</span>';
+					return false;
+				}
+				return true;				
+			}
+		</script>
+	</head>
+        <div style=" border-style:outset ;border-width:14px; border-color:#FE7F9C;border-radius:20px;margin-top:10%;margin-left:20%;margin-right:20%;padding:2%;background-color:#FDA4BA;">
+	<body style="background-color:rgb(249,255,142);">
+               <marquee direction="right">
+               <img src="./bus.png">
+               </marquee>
+		<form action= "http://192.168.33.126/signup.php" method="post" onsubmit= "return validateform();" >
+			<label style="margin-left: 34%; margin-top:7%;"><b style="font-size:120%;">Name :</b></label> <input type="text" name="name"placeholder="ex:abcdef" style="font-size: 100%; width: 30%; margin-top: 5%;border-style:outset ;border-radius:5px;"><br>
+			<label style="margin-left: 34%; margin-top:7%;"><b style="font-size:120%;">IITH E-mail :</b></label> <input type="text" name="email"placeholder="ex:cs22btech11043@iith.ac.in" style="font-size: 100%; width: 30%; margin-top: 5%;border-style:outset ;border-radius:5px;"><br>
+			<label style="margin-left: 34%; margin-top:7%;"><b style="font-size:120%;">Password :</b></label> <input type="text" name="pwd"placeholder="ex:Password@123" style="font-size: 100%; width: 28%; margin-top: 5%;border-style:outset ;border-radius:5px;"><br>
+			<input type= "submit" value="signup" name="signup" style="font-size: 150%; width: 20%; margin-top: 6%;margin-left:44%; background-color: rgb(134,252,255);border-style:outset ;border-radius:5px;" >
+		</form>
+		<p id="alerts"> </p>
+		<p style="text-align:center; margin-left: 8%;margin-top: 2%; font-size: 150%;">Have an account already? Login to continue. </p>
+		<button type="button" style="margin-left: 51%;font-size: 150%;background-color: rgb(134,252,255);;border-style:outset ;border-radius:5px;"  onclick= "window.location.href ='./login.html'">login</button>
+	</body>
+        <div>
+</html>
